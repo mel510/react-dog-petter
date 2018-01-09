@@ -1,0 +1,24 @@
+.DogsContainer {
+  text-align: center;
+  max-width: 980px;
+  margin: auto;
+  border: 1px solid black;
+}
+
+.DogCard {
+  width: 300px;
+  float: left;
+  margin: 10px;
+  border: 2px solid #0d5e8c;
+}
+
+.DogCard:hover {
+  -webkit-box-shadow: 0px 3px 8px -2px rgba(13,94,140,0.75);
+  -moz-box-shadow: 0px 3px 8px -2px rgba(13,94,140,0.75);
+  box-shadow: 0px 3px 8px -2px rgba(13,94,140,0.75);
+}
+
+.DogImage {
+  max-width: 200px;
+  max-height: 200px;
+}
