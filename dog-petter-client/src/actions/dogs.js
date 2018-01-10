@@ -7,6 +7,13 @@ const setDogs = dogs => {
   }
 }
 
+const addDog = dog => {
+  return {
+    type: 'CREATE_DOG_SUCCESS',
+    dog
+  }
+}
+
 export const getDogs = () => {
   return dispatch => {
     return fetch(`${API_URL}/dogs`)
@@ -25,7 +32,6 @@ export const createDog = dog => {
       body: JSON.stringify(dog: dog)
     })
       .then(response => response.json())
-      .then(dog => {
-      })
+      .then(dog => dispatch(addDog(dog)))
   }
 }
