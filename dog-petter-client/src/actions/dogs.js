@@ -1,3 +1,5 @@
+import { resetDogForm } from './dogForm';
+
 const API_URL = process.env.REACT_APP_API_URL;
 
 const setDogs = dogs => {
@@ -32,6 +34,9 @@ export const createDog = dog => {
       body: JSON.stringify(dog: dog)
     })
       .then(response => response.json())
-      .then(dog => dispatch(addDog(dog)))
+      .then(dog => {
+        dispatch(addDog(dog))
+        dispatch(resetDogForm())
+      })
   }
 }

@@ -4,3 +4,9 @@ export const updateDogFormData = dogFormData => {
     dogFormData
   }
 }
+
+export const resetDogForm = () => {
+  return {
+    type: 'RESET_DOG_FORM'
+  }
+}
