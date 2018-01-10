@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './Dogs.css';
 import DogCard from '../components/DogCard';
 import DogForm from './DogForm';
 
 class Dogs extends Component{
 
+  componentDidMount() {
+    this.props.dispatch({
+      type: 'GET_DOGS_SUCCESS',
+      dogs: [ {name: "Dory", breed: "GSD", date: "1/1/1", location: "dogpark", image_url: "test.jpg" }]
+    })
+  }
+  
   render() {
     return (
       <div className="DogsContainer">
@@ -17,7 +25,12 @@ class Dogs extends Component{
     )
   }
 
-
 };
 
-export default Dogs;
+const mapStateToProps = (state) => {
+  return ({
+    dogs: state.dogs
+  })
+};
+
+export default connect(mapStateToProps)(Dogs);

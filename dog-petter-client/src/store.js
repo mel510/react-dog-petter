@@ -1,18 +1,9 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-
-const dogsReducer = (state=[], action) => {
-  switch(action.type) {
-    case 'GET_DOGS_SUCCESS':
-      return action.dogs;
-
-    default:
-      return state;
-  }
-}
+import dogs from './reducers/dogs';
 
 const reducers = combineReducers({
-  dogs: dogsReducer
+  dogs
 });
 
 const middleware = [thunk];
