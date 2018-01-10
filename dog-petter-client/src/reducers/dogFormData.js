@@ -6,12 +6,12 @@ export default (state = {
   breed: ''
 }, action) => {
 
-   switch(action.type) => {
-     case 'UPDATED_DATA':
-       return action.dogFormData
+    switch(action.type) {
+      case 'UPDATED_DATA':
+        return action.dogFormData
 
-     default:
-       return state;
+      default:
+        return state;
    }
 
 }
