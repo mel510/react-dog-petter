@@ -6,7 +6,7 @@ const Dogs = (props) =>
   <div className="DogsContainer">
     <h3>Dogs</h3>
     {props.dogs.map(dog =>
-      <DogCard dog={dog} />
+      <DogCard key={dog.id} dog={dog} />
     )}
   </div>
 ;
