@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class DogForm extends Component {
 
@@ -13,4 +14,10 @@ class DogForm extends Component {
   }
 }
 
-export default DogForm;
+const mapStateToProps = state => {
+  return {
+    dogFormData: state.dogFormData
+  }
+}
+
+export default connect(mapStateToProps)(DogForm);
