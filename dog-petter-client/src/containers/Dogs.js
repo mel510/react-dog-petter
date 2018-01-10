@@ -1,14 +1,23 @@
-import React from 'react';
-import './Dogs.css'
-import DogCard from '../components/DogCard'
+import React, { Component } from 'react';
+import './Dogs.css';
+import DogCard from '../components/DogCard';
+import DogForm from './DogForm';
 
-const Dogs = (props) =>
-  <div className="DogsContainer">
-    <h3>Dogs</h3>
-    {props.dogs.map(dog =>
-      <DogCard key={dog.id} dog={dog} />
-    )}
-  </div>
-;
+class Dogs extends Component{
+
+  render() {
+    return (
+      <div className="DogsContainer">
+        <h3>Dogs</h3>
+        {this.props.dogs.map(dog =>
+          <DogCard key={dog.id} dog={dog} />
+        )}
+        <DogForm />
+      </div>
+    )
+  }
+
+
+};
 
 export default Dogs;
