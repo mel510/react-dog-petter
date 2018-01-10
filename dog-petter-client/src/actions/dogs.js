@@ -14,3 +14,18 @@ export const getDogs = () => {
       .then(dogs => dispatch(setDogs(dogs)))
   }
 }
+
+export const createDog = dog => {
+  return dispatch => {
+    return fetch(`${API_URL}/dogs`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(dog: dog)
+    })
+      .then(response => response.json())
+      .then(dog => {
+      })
+  }
+}

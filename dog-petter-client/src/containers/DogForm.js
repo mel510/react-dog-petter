@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateDogFormData } from '../actions/dogForm';
+import { createDog } from '../actions/dogs';
 
 class DogForm extends Component {
 
@@ -12,12 +13,17 @@ class DogForm extends Component {
     this.props.updateDogFormData(currentDogFormData)
   }
 
+  handleOnSubmit = event => {
+    event.preventDefault();
+    this.props.createDog(this.props.dogFormData)
+  }
+
   render() {
     const { name, location, image_url, date, breed } = this.props.dogFormData;
     return(
       <div className="DogForm">
         <h3>Add a Dog</h3>
-        <form>
+        <form onSubmit={this.handleOnSubmit}>
           <div className="FormField">
             <label htmlFor="name">Name:</label>
             <input
@@ -63,6 +69,7 @@ class DogForm extends Component {
               value={breed}
             />
           </div>
+          <button type="submit">Add</button>
         </form>
       </div>
     )
@@ -75,4 +82,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { updateDogFormData })(DogForm);
+export default connect(mapStateToProps, { updateDogFormData, createDog })(DogForm);
