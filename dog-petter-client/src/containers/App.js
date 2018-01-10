@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Dogs from './Dogs'
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 class App extends Component {
 
   constructor(props) {
@@ -13,7 +15,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3001/api/dogs')
+    fetch(`${API_URL}/dogs`)
       .then(response => response.json())
       .then(dogs => this.setState({ dogs }))
   }
@@ -22,7 +24,7 @@ class App extends Component {
     return (
       <div className="App">
         App Container
-        <Dogs dogs={this.state.dogs}/>
+        <Dogs dogs={this.state.dogs} />
       </div>
     );
   }
