@@ -10,8 +10,9 @@ export default (state=[], action) => {
       return state.concat(action.dog)
 
     case 'REMOVE_DOG_SUCCESS':
-      console.log("hit remove")
-      return state.filter(dog => dog.id !== action.dogId)
+      console.log("hit remove reducer")
+      //debugger;
+      return { dogs: state.filter(dog => dog.id !== action.dog.id)}
 
     default:
       return state;

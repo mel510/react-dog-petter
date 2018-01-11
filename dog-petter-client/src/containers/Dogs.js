@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import './Dogs.css';
 import DogCard from '../components/DogCard';
 import DogForm from './DogForm';
-import { getDogs, removeDog } from '../actions/dogs'
+import { getDogs } from '../actions/dogs';
 
 class Dogs extends Component{
 
@@ -19,7 +19,6 @@ class Dogs extends Component{
           {this.props.dogs.map(dog =>
             <DogCard
               key={dog.id}
-              removeDog={removeDog}
               dog={dog}
             />
           )}
@@ -37,4 +36,4 @@ const mapStateToProps = (state) => {
   })
 };
 
-export default connect(mapStateToProps, { getDogs, removeDog })(Dogs);
+export default connect(mapStateToProps, { getDogs })(Dogs);

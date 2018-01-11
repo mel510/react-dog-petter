@@ -16,21 +16,27 @@ const addDog = dog => {
   }
 }
 
-export function removeDog(dogId) {
+export function removeDog(dog) {
   return {
     type: 'REMOVE_DOG_SUCCESS',
-    dogId: dogId
+    dog
   }
 }
-// export const removeDog = (dogId) => {
-//   console.log('here')
-//   return dispatch => {
-//     return {
-//       type: 'REMOVE_DOG_SUCCESS',
-//       dogId: dogId
-//     }
-//   }
-// }
+
+export function deleteDog(dog) {
+  return dispatch => {
+    dispatch(removeDog(dog));
+    //debugger;
+    return fetch(`${API_URL}/dogs/${dog.id}`, {
+      method: 'DELETE',
+      body: JSON.stringify(dog),
+      headers: {
+        'Content-Type': 'application/json',
+      }
+     })
+     .then(response => response.json())
+  }
+}
 
 export const getDogs = () => {
   return dispatch => {
@@ -47,7 +53,7 @@ export const createDog = dog => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(dog: dog)
+      body: JSON.stringify(dog)
     })
       .then(response => response.json())
       .then(dog => {
