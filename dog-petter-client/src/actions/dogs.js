@@ -2,14 +2,14 @@ import { resetDogForm } from './dogForm';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-const setDogs = dogs => {
+export const setDogs = dogs => {
   return {
     type: 'GET_DOGS_SUCCESS',
     dogs
   }
 }
 
-const addDog = dog => {
+export const addDog = dog => {
   return {
     type: 'CREATE_DOG_SUCCESS',
     dog
@@ -17,6 +17,7 @@ const addDog = dog => {
 }
 
 export function removeDog(dog) {
+  //debugger;
   return {
     type: 'REMOVE_DOG_SUCCESS',
     dog
@@ -24,6 +25,7 @@ export function removeDog(dog) {
 }
 
 export function deleteDog(dog) {
+  //debugger;
   return dispatch => {
     dispatch(removeDog(dog));
     //debugger;
@@ -34,7 +36,7 @@ export function deleteDog(dog) {
         'Content-Type': 'application/json',
       }
      })
-     .then(response => response.json())
+     .then(res => console.log(res))
   }
 }
 

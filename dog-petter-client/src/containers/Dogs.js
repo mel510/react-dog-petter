@@ -8,10 +8,12 @@ import { getDogs } from '../actions/dogs';
 class Dogs extends Component{
 
   componentDidMount() {
+    //debugger;
     this.props.getDogs()
   }
 
   render() {
+    //debugger;
     return (
       <div>
         <div className="DogsContainer">

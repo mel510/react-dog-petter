@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+//import { bindActionCreators } from 'redux';
 import { deleteDog } from '../actions/dogs';
 
 class DogCard extends Component {
 
-  handleOnClick = (dog) => {
-    debugger;
-    this.props.deleteDog(dog)
-  }
+  // handleOnClick = (dog) => {
+  //   debugger;
+  //   this.props.deleteDog(dog)
+  // }
 
   render() {
     //debugger;
@@ -23,7 +23,7 @@ class DogCard extends Component {
         <button
           type="button"
           className="btn-delete"
-          onClick={this.props.dog.handleOnClick}
+          onClick={() => this.props.deleteDog(this.props.dog)}
         >Delete</button>
       </div>
     )
@@ -32,11 +32,14 @@ class DogCard extends Component {
 };
 
 const mapStateToProps = (state) => {
-  return { dogs: state.dogs.dogs }
+  //debugger;
+  return { dogs: state.dogs }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ deleteDog }, dispatch)
-}
+// function mapDispatchToProps(dispatch) {
+//   return bindActionCreators({ deleteDog }, dispatch)
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps, null)(DogCard);
+//debugger;
+
+export default connect(mapStateToProps, {deleteDog}, null)(DogCard);
