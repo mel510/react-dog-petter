@@ -7,18 +7,23 @@
 .DogCard {
   width: 300px;
   float: left;
-  margin: 10px;
-  padding-bottom: 20px;
+  margin: 10px 10px 25px 10px;
   border: 1px solid #dddddd;
   -webkit-box-shadow: 0px 9px 14px -4px rgba(0,0,0,0.21);
   -moz-box-shadow: 0px 9px 14px -4px rgba(0,0,0,0.21);
   box-shadow: 0px 9px 14px -4px rgba(0,0,0,0.21);
+  line-height: .75em;
 }
 
 .DogCard:hover {
   -webkit-box-shadow: 0px 9px 14px -4px rgba(0,0,0,0.7);
   -moz-box-shadow: 0px 9px 14px -4px rgba(0,0,0,0.7);
   box-shadow: 0px 9px 14px -4px rgba(0,0,0,0.7);
+}
+
+.DogName {
+  text-transform: uppercase;
+  font-size: 1.2em;
 }
 
 .DogImage {
@@ -41,4 +46,20 @@
   border: 1px solid #dddddd;
   background-color: #ffffff;
   clear: both;
+}
+
+.btn-delete {
+  font-weight: bold;
+  opacity: .6;
+  position: relative;
+  top: -415px;
+  right: -135px;
+  align-self: left;
+  font-size: .8em;
+  padding: 2px 5px;
+}
+
+.btn-delete:hover {
+  color: #ffffff;
+  background-color: #000000;
 }

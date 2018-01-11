@@ -17,14 +17,15 @@ class DogCard extends Component {
     return (
       <div key={id} className="DogCard">
         <img className="DogImage" src={image_url} alt={name} />
-        <h4>{name}</h4>
+        <h4 className="DogName">{name}</h4>
         <p>{date} &#124; {location}</p>
         <p>{breed}</p>
         <button
           type="button"
+          title="Delete Dog"
           className="btn-delete"
           onClick={() => this.props.deleteDog(this.props.dog)}
-        >Delete</button>
+        >X</button>
       </div>
     )
   }
