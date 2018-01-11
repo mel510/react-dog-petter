@@ -16,6 +16,22 @@ const addDog = dog => {
   }
 }
 
+export function removeDog(dogId) {
+  return {
+    type: 'REMOVE_DOG_SUCCESS',
+    dogId: dogId
+  }
+}
+// export const removeDog = (dogId) => {
+//   console.log('here')
+//   return dispatch => {
+//     return {
+//       type: 'REMOVE_DOG_SUCCESS',
+//       dogId: dogId
+//     }
+//   }
+// }
+
 export const getDogs = () => {
   return dispatch => {
     return fetch(`${API_URL}/dogs`)
