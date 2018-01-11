@@ -16,9 +16,9 @@ class DogCard extends Component {
     //debugger;
     return (
       <div key={id} className="DogCard">
+        <img className="DogImage" src={image_url} alt={name} />
         <h4>{name}</h4>
         <p>{date} &#124; {location}</p>
-        <img className="DogImage" src={image_url} alt={name} />
         <p>{breed}</p>
         <button
           type="button"
