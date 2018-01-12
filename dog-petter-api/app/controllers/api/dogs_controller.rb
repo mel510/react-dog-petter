@@ -36,7 +36,7 @@ class Api::DogsController < ApplicationController
 
   private
     def dog_params
-      params.require(:dog).permit(:name, :location, :image_url, :date, :breed)
+      params.require(:dog).permit(:name, :location, :image_url, :date, :breed, :like)
     end
 
     def current_dog

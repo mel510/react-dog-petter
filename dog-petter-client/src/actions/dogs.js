@@ -27,7 +27,6 @@ export const addLike = dog => {
 
 //async stuff
 export function removeDog(dog) {
-  //debugger;
   return {
     type: 'REMOVE_DOG_SUCCESS',
     dog
@@ -35,10 +34,8 @@ export function removeDog(dog) {
 }
 
 export function deleteDog(dog) {
-  //debugger;
   return dispatch => {
     dispatch(removeDog(dog));
-    //debugger;
     return fetch(`${API_URL}/dogs/${dog.id}`, {
       method: 'DELETE',
       body: JSON.stringify(dog),
@@ -75,21 +72,44 @@ export const createDog = dog => {
   }
 }
 
-export const likeDog = (dog, dogs) => {
-  const updatedDog = Object.assign(...dog, { likes: dog.likes + 1 })
+export const likeDog = (dog) => {
+  //console.log("like")
+  //console.log(dog)
+  //debugger;
+  //const updateDog = Object.assign(...dog, { like: dog.like + 1 })
   return dispatch => {
     return fetch(`${API_URL}/dogs/${dog.id}`, {
-      method: "PUT",
+      method: "PATCH",
       headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({dog: updatedDog})
+        body: JSON.stringify({like: dog.like + 1})
       })
-      .then(response => response.json())
-      .then(dream => {
-        dispatch(addLike(dog))
-        dispatch(addLike(dogs))
-      })
-    .catch(error => console.log(error))
+        .then(response => response.json())
+        .then(console.log("a"))
+        .then(dog => {
+          dispatch(addLike(dog))
+        })
   }
 }
+
+
+// export function addLikes(book) {
+//    return (dispatch) => {
+//      dispatch({ type: 'ADD_LIKE' })
+//      return fetch(`${API_URL}/books/${book.id}`, {
+//        method:'PATCH',
+//        headers: {
+//          'Accept': 'application/json',
+//          'Content-Type': 'application/json'
+//        },
+//        body: JSON.stringify({
+//          likes: book.likes + 1
+//        })
+//      })
+//      .then((res) => res.json())
+//      .then((responseJson) => {dispatch({ type: 'SUCCESSFULLY_ADDED_LIKE', payload: responseJson })
+//      return responseJson
+//      })
+//    }
+//  }
