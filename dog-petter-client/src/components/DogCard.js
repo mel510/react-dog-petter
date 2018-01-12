@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-//import { bindActionCreators } from 'redux';
-import { deleteDog } from '../actions/dogs';
+import { deleteDog, likeDog } from '../actions/dogs';
 
 class DogCard extends Component {
-
-  // handleOnClick = (dog) => {
-  //   debugger;
-  //   this.props.deleteDog(dog)
-  // }
 
   render() {
     const { id, name, location, image_url, date, breed, like } = this.props.dog;
@@ -20,7 +14,12 @@ class DogCard extends Component {
         <p>{date} &#124; {location}</p>
         <p>{breed}</p>
         <p>Likes: {like}</p>
-        <button onClick={this.props.likeDog}>Like</button>
+        <button
+          type="button"
+          title="Like Dog"
+          className="btn-like"
+          onClick={() => this.props.likeDog(this.props.dog)}
+        >Like</button>
         <button
           type="button"
           title="Delete Dog"
@@ -38,10 +37,4 @@ const mapStateToProps = (state) => {
   return { dogs: state.dogs }
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return bindActionCreators({ deleteDog }, dispatch)
-// }
-
-//debugger;
-
-export default connect(mapStateToProps, {deleteDog}, null)(DogCard);
+export default connect(mapStateToProps, {deleteDog, likeDog}, null)(DogCard);
