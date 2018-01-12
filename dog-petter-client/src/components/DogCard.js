@@ -11,8 +11,7 @@ class DogCard extends Component {
   // }
 
   render() {
-    //debugger;
-    const { id, name, location, image_url, date, breed } = this.props.dog;
+    const { id, name, location, image_url, date, breed, like } = this.props.dog;
     //debugger;
     return (
       <div key={id} className="DogCard">
@@ -20,6 +19,8 @@ class DogCard extends Component {
         <h4 className="DogName">{name}</h4>
         <p>{date} &#124; {location}</p>
         <p>{breed}</p>
+        <p>Likes: {like}</p>
+        <button onClick={this.props.likeDog}>Like</button>
         <button
           type="button"
           title="Delete Dog"

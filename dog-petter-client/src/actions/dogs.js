@@ -2,6 +2,7 @@ import { resetDogForm } from './dogForm';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
+//actions
 export const setDogs = dogs => {
   return {
     type: 'GET_DOGS_SUCCESS',
@@ -16,6 +17,15 @@ export const addDog = dog => {
   }
 }
 
+export const addLike = dog => {
+  return {
+    type: 'LIKE_DOG',
+    dog
+  }
+}
+
+
+//async stuff
 export function removeDog(dog) {
   //debugger;
   return {
@@ -62,5 +72,24 @@ export const createDog = dog => {
         dispatch(addDog(dog))
         dispatch(resetDogForm())
       })
+  }
+}
+
+export const likeDog = (dog, dogs) => {
+  const updatedDog = Object.assign(...dog, { likes: dog.likes + 1 })
+  return dispatch => {
+    return fetch(`${API_URL}/dogs/${dog.id}`, {
+      method: "PUT",
+      headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({dog: updatedDog})
+      })
+      .then(response => response.json())
+      .then(dream => {
+        dispatch(addLike(dog))
+        dispatch(addLike(dogs))
+      })
+    .catch(error => console.log(error))
   }
 }
