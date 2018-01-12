@@ -3,8 +3,9 @@ import React from 'react';
 const Home = () => {
   return (
     <div className='Home'>
-      <h1>Welcome!</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in arcu leo. Curabitur consectetur nunc eget dui lacinia, non dapibus neque pulvinar. Duis faucibus non tortor eu luctus. In vehicula elementum ex, et tristique lorem consectetur in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce fringilla dapibus porttitor. Duis semper imperdiet elementum. Cras mi risus, condimentum et ultrices et, dapibus ac diam. Nullam luctus id eros at interdum. Vestibulum nisi orci, efficitur et malesuada ut, egestas posuere odio. Nam bibendum in tellus eget consectetur.</p>
+      <h1>Welcome to DogPetter</h1>
+      <p>This app allows you to log random dogs that you&rsquo;ve met and pet! You can add a dog with a name, location, image URL, date, and breed. Dogs can also be "liked".</p>
+      <p>Make sure to visit <a href="/greeting-dogs">Greeting Dogs</a> to learn more about politely meeting new dogs.</p>
     </div>
   )
 }

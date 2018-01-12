@@ -1,6 +1,3 @@
-.Nav {
-  
-}
 
 .Nav li {
   text-align: center;
@@ -113,5 +110,8 @@
 }
 
 .About, .GreetingDogs, .Home {
+  margin: auto;
   clear: both;
+  max-width:600px;
+  padding: 0px 20px;
 }
