@@ -73,10 +73,6 @@ export const createDog = dog => {
 }
 
 export const likeDog = (dog) => {
-  //console.log("like")
-  //console.log(dog)
-  //debugger;
-  //const updateDog = Object.assign(...dog, { like: dog.like + 1 })
   return dispatch => {
     return fetch(`${API_URL}/dogs/${dog.id}`, {
       method: "PATCH",
@@ -92,24 +88,3 @@ export const likeDog = (dog) => {
         })
   }
 }
-
-
-// export function addLikes(book) {
-//    return (dispatch) => {
-//      dispatch({ type: 'ADD_LIKE' })
-//      return fetch(`${API_URL}/books/${book.id}`, {
-//        method:'PATCH',
-//        headers: {
-//          'Accept': 'application/json',
-//          'Content-Type': 'application/json'
-//        },
-//        body: JSON.stringify({
-//          likes: book.likes + 1
-//        })
-//      })
-//      .then((res) => res.json())
-//      .then((responseJson) => {dispatch({ type: 'SUCCESSFULLY_ADDED_LIKE', payload: responseJson })
-//      return responseJson
-//      })
-//    }
-//  }

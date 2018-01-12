@@ -52,8 +52,8 @@
   font-weight: bold;
   opacity: .6;
   position: relative;
-  top: -415px;
-  right: -135px;
+  top: -440px;
+  right: -115px;
   align-self: left;
   font-size: .8em;
   padding: 2px 5px;
@@ -62,4 +62,15 @@
 .btn-delete:hover {
   color: #ffffff;
   background-color: #000000;
+}
+
+.btn-like {
+  font-size: .8em;
+  padding: 2px 5px;
+  margin-bottom: 10px;
+}
+
+.Footer {
+  margin-top: 60px;
+  font-size: .75em;
 }

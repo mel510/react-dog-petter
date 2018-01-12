@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180112200556) do
+ActiveRecord::Schema.define(version: 20180112205734) do
 
   create_table "dogs", force: :cascade do |t|
     t.string "name"
     t.string "location"
-    t.string "image_url"
+    t.string "image_url", default: "https://i.imgur.com/hSfKdgy.png"
     t.string "date"
     t.string "breed"
     t.datetime "created_at", null: false
