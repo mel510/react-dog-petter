@@ -5,8 +5,10 @@ const Navbar = () => {
   return (
     <div className="Nav">
       <NavLink to='/' header>DogPetter</NavLink>
-      <NavLink to='/dogs' name='Dogs'></NavLink>
-      <NavLink to='/about' name='About'></NavLink>
+      &#124;
+      <NavLink to='/dogs' name='Dogs'>Dogs</NavLink>
+      &#124;
+      <NavLink to='/about' name='About'>About</NavLink>
     </div>
   )
 }
