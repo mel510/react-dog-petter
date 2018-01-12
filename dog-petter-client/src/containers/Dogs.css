@@ -74,3 +74,11 @@
   margin-top: 60px;
   font-size: .75em;
 }
+
+@media (max-width: 643px) {
+  .DogCard {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
