@@ -1,6 +1,8 @@
 # React Dog Petter
 This React/Redux app iterates off the concept from https://github.com/mel510/sinatra-dog-petter. DogPetter is an app to track everyone's favorite activity: petting dogs. You can log your petting sessions by date, location, dog name, and dog breed, and "like" your favorite dogs.
 
+![screenshot of DogPetter](https://i.imgur.com/9i7Ube4.png)
+
 ## Installation & Usage
 
 Clone this repo and in separate tabs: run `rails db:migrate`, `rails db:seed`, and `rails s -p 3001` for `dog-petter-api` and `npm install && start` for `dog-petter-client`.
