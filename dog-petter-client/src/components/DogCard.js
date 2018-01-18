@@ -6,7 +6,6 @@ class DogCard extends Component {
 
   render() {
     const { id, name, location, image_url, date, breed, like } = this.props.dog;
-    //debugger;
     return (
       <div key={id} className="DogCard">
         <img className="DogImage" src={image_url} alt={name} />
@@ -33,7 +32,6 @@ class DogCard extends Component {
 };
 
 const mapStateToProps = (state) => {
-  //debugger;
   return { dogs: state.dogs }
 }
 
